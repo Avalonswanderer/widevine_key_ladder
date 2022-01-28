@@ -9,9 +9,7 @@ from Crypto.Hash import CMAC
 from Crypto.Cipher import AES
 
 def read_bin_file(filename):
-    with open(filename, 'rb') as f:
-        data = f.read()
-    return data
+    return open(filename, 'rb').read()
 
 def gen_128_cmac(key, context, header):
     cmac_obj = CMAC.new(key, ciphermod=AES)
